@@ -1,18 +1,24 @@
 name: "Prerequisites"
 description: "Install mold."
-env:
-  MOLD_VERSION: "1.2.1"
 runs:
   using: "composite"
   steps:
     - run: wget https://github.com/rui314/mold/releases/download/v$MOLD_VERSION/mold-$MOLD_VERSION-x86_64-linux.tar.gz
+      env:
+        MOLD_VERSION: "1.2.1"
       shell: bash
 
     - run: tar -xf mold-$MOLD_VERSION-x86_64-linux.tar.gz
+      env:
+        MOLD_VERSION: "1.2.1"
       shell: bash
 
     - run: cp -a mold-$MOLD_VERSION-x86_64-linux/* /usr/local/
+      env:
+        MOLD_VERSION: "1.2.1"
       shell: bash
 
     - run: rm -rf mold-$MOLD_VERSION-x86_64-linux
+      env:
+        MOLD_VERSION: "1.2.1"
       shell: bash
